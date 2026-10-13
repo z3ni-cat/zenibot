@@ -1,0 +1,5 @@
+[
+  { "id": "aplikasi-premium", "name": "Aplikasi Premium", "emoji": "📱" },
+  { "id": "topup-game", "name": "TopUp Game", "emoji": "🎮" },
+  { "id": "voucher", "name": "Voucher", "emoji": "🎟️" }
+]

@@ -1,0 +1,27 @@
+module.exports = {
+  apps: [
+    {
+      name: 'zenibot',
+      cwd: './bot',
+      script: 'index.js',
+      env: {
+        NODE_ENV: 'production',
+        // Pindahkan isi .env ke sini, atau biarkan dotenv membaca file .env
+        // BOT_NAME: 'ZeniBot',
+        // OWNER_NUMBERS: '6281234567890',
+        // BOT_NUMBER: '6281234567890',
+        // SAYABAYAR_API_KEY: 'isi-dari-dashboard-sayabayar',
+      },
+    },
+    {
+      name: 'zenibot-admin',
+      cwd: './admin',
+      script: 'server.js',
+      env: {
+        NODE_ENV: 'production',
+        ADMIN_PORT: 3004,
+        BOT_DIR: '../bot',
+      },
+    },
+  ],
+}

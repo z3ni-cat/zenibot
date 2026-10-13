@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@whiskeysockets/baileys": "npm:@itsliaaa/baileys@0.3.18-final",
+    "pino": "^9.4.0",
+    "qrcode": "^1.5.4",
+    "rahad-all-downloader-v2": "^2.2.1",
+    "dotenv": "^16.4.5"
+  },
+  "description": "ZeniCat - WhatsApp Bot buatan sendiri",
+  "main": "index.js",
+  "name": "zenicat",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

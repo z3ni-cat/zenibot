@@ -1,0 +1,12 @@
+[
+  {
+    "id": "contoh-produk",
+    "name": "Contoh Produk",
+    "title": "*Contoh Produk*",
+    "description": "Deskripsi contoh produk.\n\nHapus produk ini dan tambah produk asli via Admin Panel.",
+    "price": 10000,
+    "stock": 5,
+    "cover": null,
+    "categoryId": "aplikasi-premium"
+  }
+]

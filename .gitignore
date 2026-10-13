@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# env & secrets
+.env
+.env-*
+!.env.example
+admin/.config.json
+
+# runtime
+bot/session/
+bot/data/*.json
+!bot/data/categories.json
+!bot/data/products.json
+bot/data/stock/*.json
+!bot/data/stock/.gitkeep
+bot/data/rules/*.txt
+!bot/data/rules/.gitkeep
+*.log
+.pm2/
+
+# OS
+.DS_Store
+Thumbs.db
