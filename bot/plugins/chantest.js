@@ -1,6 +1,7 @@
 // chantest — tes posting ke WhatsApp Channel. KHUSUS owner.
 import { isAdmin } from './produk.js'
 import { BOT_NAME } from '../src/brand.js'
+import { isPremium, upsellText } from '../src/license.js'
 
 export default {
   name: 'chantest',
@@ -10,6 +11,7 @@ export default {
     if (!isAdmin(config, sender, senderNumber)) {
       return reply('❌ _Perintah ini khusus owner._')
     }
+    if (!isPremium()) return reply(upsellText('Auto-post ke WA Channel'))
     const code = (args[0] || '').trim().replace(/.*channel\//, '')
     if (!code) {
       return reply('📢 _Kirim kode invite channel._\nContoh: *chantest 0029Vb6RMRYEVccJrpFL6O13*')

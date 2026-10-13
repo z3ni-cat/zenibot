@@ -17,6 +17,7 @@ import { startGenResultWatcher } from './genResultWatcher.js'
 import { startAivideoDeliver } from './aivideoDeliver.js'
 import { startReminderWatcher } from './reminder.js'
 import { startChannelAutoPost } from './channelAutoPost.js'
+import { startPromo } from './promo.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -83,6 +84,7 @@ export async function startBot(config) {
     startAivideoDeliver(getSock)
     startReminderWatcher(getSock)
     startChannelAutoPost(getSock)
+    startPromo(getSock, config)
   }
 
   // Belum terdaftar? Pilih metode pairing.

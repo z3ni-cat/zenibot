@@ -10,6 +10,7 @@ import {
   SMM_GROUPS, SMM_GROUP_EMOJI,
 } from '../src/smm.js'
 import { formatRupiah } from '../src/utils.js'
+import { isPremium, upsellText } from '../src/license.js'
 function isAdmin(config, sender, senderNumber) {
   const owners = config.owner || []
   return owners.some((o) => {
@@ -24,6 +25,7 @@ export default {
   description: 'Layanan SMM (followers/likes/views)',
   async run(ctx) {
     const { command, args, reply, sender, senderNumber, config } = ctx
+    if (!isPremium()) return reply(upsellText('SMM panel'))
     const owner = isAdmin(config, sender, senderNumber)
 
     if (command === '+syncsmm') {

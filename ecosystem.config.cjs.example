@@ -13,15 +13,5 @@ module.exports = {
         // SAYABAYAR_API_KEY: 'isi-dari-dashboard-sayabayar',
       },
     },
-    {
-      name: 'zenibot-admin',
-      cwd: './admin',
-      script: 'server.js',
-      env: {
-        NODE_ENV: 'production',
-        ADMIN_PORT: 3004,
-        BOT_DIR: '../bot',
-      },
-    },
   ],
 }

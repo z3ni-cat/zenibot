@@ -11,6 +11,7 @@ import { paymentReady, createQrisInvoice } from '../src/payment.js'
 import { addOrder, updateOrder } from '../src/orders.js'
 import { formatRupiah, makeInvoiceCode, formatWib } from '../src/utils.js'
 import { BOT_NAME } from '../src/brand.js'
+import { isPremium, upsellText } from '../src/license.js'
 
 export async function handleAivideoInput({ sock, chat, sender, msg, text, pushName, reply }) {
   const s = getAivideoSession(sender)
@@ -142,6 +143,7 @@ export default {
   description: 'Jasa generate video AI dari prompt + gambar referensi',
   async run(ctx) {
     const { sender, reply } = ctx
+    if (!isPremium()) return reply(upsellText('Jasa generate video AI'))
     putAivideoSession(sender, { step: 'prompt' })
     await reply(
       `🎬 *Jasa Generate Video AI*\n\n` +

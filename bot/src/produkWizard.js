@@ -16,6 +16,7 @@ import {
   loadProducts, saveProducts, slugify,
   loadCategories, saveCategories, matchCategory,
 } from './products.js'
+import { isPremium, LITE_MAX_PRODUCTS, upsellText } from './license.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const SESS_FILE = path.join(__dirname, '..', 'data', 'wizard.json')
@@ -128,7 +129,14 @@ export async function handleWizardStep({ sender, text, reply }) {
       cover: existing?.cover || null, categoryId: s.catId,
     }
     if (existing) Object.assign(existing, data)
-    else list.push({ id, ...data })
+    else {
+      if (!isPremium() && list.length >= LITE_MAX_PRODUCTS) {
+        clearWizard(sender)
+        await reply(`🔓 *Batas Lite tercapai* — maksimal ${LITE_MAX_PRODUCTS} produk.\n\n` + upsellText('Tambah produk tanpa batas'))
+        return true
+      }
+      list.push({ id, ...data })
+    }
     saveProducts(list)
     clearWizard(sender)
     await reply(

@@ -30,6 +30,7 @@ import {
 } from '../src/products.js'
 import { formatRupiah } from '../src/utils.js'
 import { startWizard } from '../src/produkWizard.js'
+import { isPremium, LITE_MAX_PRODUCTS, upsellText } from '../src/license.js'
 
 export function isAdmin(config, sender, senderNumber) {
   const owners = config.owner || []
@@ -104,6 +105,9 @@ async function addOrUpdate({ text, reply }) {
     return reply(`✅ Produk *${name}* di kategori *${cat.name}* berhasil diperbarui!`)
   }
 
+  if (!isPremium() && list.length >= LITE_MAX_PRODUCTS) {
+    return reply(`🔓 *Batas Lite tercapai* — maksimal ${LITE_MAX_PRODUCTS} produk.\n\n` + upsellText('Tambah produk tanpa batas'))
+  }
   list.push({ id: slugify(name), name, description: desc, cover: null, categoryId: cat.id })
   saveProducts(list)
   return reply(

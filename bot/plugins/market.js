@@ -9,6 +9,7 @@
 //   +market tiap <menit>         -> atur interval cek (owner)
 import { loadConfig, saveConfig, analyze, formatSignal } from '../src/market.js'
 import { isAdmin } from './produk.js'
+import { isPremium, upsellText } from '../src/license.js'
 
 function normGroups(c) {
   if (c.groups.length && typeof c.groups[0] === 'string') {
@@ -26,6 +27,7 @@ export default {
   alias: ['+market', 'sinyal'],
   description: 'Analisis teknikal & sinyal market per grup (XAUUSD, saham, crypto)',
   async run({ sock, chat, sender, senderNumber, text, reply, config }) {
+    if (!isPremium()) return reply(upsellText('Market monitor'))
     const args = text.trim().split(/\s+/).slice(1)
     const cfg = loadConfig()
     const groups = normGroups(cfg)

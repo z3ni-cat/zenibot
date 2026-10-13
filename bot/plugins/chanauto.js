@@ -2,6 +2,7 @@
 import { isAdmin } from './produk.js'
 import { loadChannelConfig, saveChannelConfig } from '../src/channelAutoPost.js'
 import { BOT_NAME } from '../src/brand.js'
+import { isPremium, upsellText } from '../src/license.js'
 
 export default {
   name: 'chanauto',
@@ -11,6 +12,7 @@ export default {
     if (!isAdmin(config, sender, senderNumber)) {
       return reply('❌ _Perintah ini khusus owner._')
     }
+    if (!isPremium()) return reply(upsellText('Auto-post GitHub ke WA Channel'))
     const sub = (args[0] || '').toLowerCase()
     const c = loadChannelConfig()
 

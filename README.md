@@ -1,26 +1,32 @@
-# 🤖 ZeniBot — Bot WhatsApp Toko Digital + Admin Panel
+# 🤖 ZeniBot — Bot WhatsApp Toko Digital
 
-Bot WhatsApp toko digital siap jual: katalog produk, pembayaran QRIS otomatis, kelola stok, SMM panel, tools gratis — plus **admin panel web** untuk kelola semuanya tanpa perlu chat perintah.
+Bot WhatsApp toko digital siap pakai: katalog produk, pembayaran QRIS otomatis, kelola stok, tools gratis.
 
-## ✨ Fitur
+> **Edisi di repo ini: LITE (gratis).** Butuh semua fitur? Upgrade ke **Full Version** — Rp150.000 sekali bayar.
 
-**🛍️ Toko**
-- Katalog produk per kategori (aplikasi premium, topup game, voucher, dsb)
+| Fitur | Lite (repo ini) | Full |
+|---|---|---|
+| Katalog produk + QRIS otomatis | ✅ | ✅ |
+| Maksimal produk | 10 | ♾️ Tanpa batas |
+| **Admin panel web** | ❌ | ✅ |
+| SMM panel | ❌ | ✅ |
+| Market monitor | ❌ | ✅ |
+| Jasa generate video AI | ❌ | ✅ |
+| Auto-post ke WA Channel | ❌ | ✅ |
+| Pesan promo ke owner | tiap 6 jam | ❌ Tidak ada |
+
+## ✨ Fitur (Lite)
+- Katalog produk per kategori (aplikasi premium, topup game, voucher, dsb) — maks 10 produk
 - Checkout via QRIS otomatis (sayabayar.com) — stok terkirim otomatis setelah bayar
 - Antrean stok akun (format `email|password`), rules produk, cover/banner produk
 - Sesi tanya-stok: pembeli chat dengan admin saat stok habis
 
-**📊 Admin Panel** (web)
-- Dashboard: omzet, order hari ini, total produk & stok
-- CRUD produk (nama, harga, deskripsi, banner, stok) & kategori
-- Kelola antrean stok & rules per produk
-- Riwayat order (paid / expired / pending)
-
 **🧰 Bonus**
 - Tools gratis: downloader IG/TikTok, cek resi, konverter PDF
-- SMM panel (djuragansosmed) — jual followers/likes otomatis
-- Market monitor, reminder pribadi, catatan, stiker maker
+- Reminder pribadi, catatan, stiker maker
 - Kopken (katalog minuman) & kelola stok minyak goreng
+
+> Fitur *Full Version*: admin panel web, tanpa batas produk, SMM panel, market monitor, jasa video AI, auto-post WA Channel.
 
 ## 🖥️ Kebutuhan
 
@@ -42,14 +48,9 @@ nano .env   # isi OWNER_NUMBERS, BOT_NUMBER, SAYABAYAR_API_KEY, dll
 # 3. Install & jalankan bot
 cd bot && npm install
 node index.js   # pertama kali: masukkan kode pairing 8 digit di WA
-
-# 4. Jalankan admin panel (terminal baru)
-cd ../admin && npm install
-node server.js  # buka http://IP-VPS:3004, buat password saat pertama dibuka
 ```
 
-> Untuk produksi, jalankan keduanya via PM2 (lihat `ecosystem.config.cjs.example`).
-> Pasang reverse proxy (Nginx/Apache) + HTTPS di depan admin panel.
+> Untuk produksi, jalankan via PM2 (lihat `ecosystem.config.cjs.example`).
 
 ## ⚙️ Konfigurasi (.env)
 
@@ -62,7 +63,9 @@ node server.js  # buka http://IP-VPS:3004, buat password saat pertama dibuka
 | `SAYABAYAR_API_KEY` | Ya* | QRIS otomatis via sayabayar.com |
 | `SUPPORT_ADMINS` | Tidak | Admin sesi tanya-stok |
 | `NEOXR_API_KEY` | Tidak | Tools gratis |
-| `DJURAGAN_API_KEY` | Tidak | SMM panel |
+| `LICENSE_TIER` | Tidak | `lite` (default) / `premium` |
+| `SALES_CONTACT` | Tidak | Kontak pembelian Full Version (tampil di pesan promo) |
+| `PROMO_EVERY_HOURS` | Tidak | Jeda pesan promo Lite, jam (default 6, 0 = mati) |
 
 \*Tanpa ini checkout QRIS nonaktif; katalog tetap jalan.
 
@@ -71,11 +74,10 @@ node server.js  # buka http://IP-VPS:3004, buat password saat pertama dibuka
 ```
 zenibot/
 ├── bot/            # kode bot WhatsApp (Baileys)
-│   ├── src/        # logika inti (toko, payment, stok, dsb)
+│   ├── src/        # logika inti (toko, payment, stok, lisensi, dsb)
 │   ├── plugins/    # perintah chat
 │   ├── data/       # database JSON (dibuat otomatis)
 │   └── assets/     # cover produk & thumbnail
-├── admin/          # admin panel web (Express)
 └── .env.example
 ```
 
