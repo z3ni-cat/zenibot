@@ -63,7 +63,8 @@ node index.js   # pertama kali: masukkan kode pairing 8 digit di WA
 | `SAYABAYAR_API_KEY` | Ya* | QRIS otomatis via sayabayar.com |
 | `SUPPORT_ADMINS` | Tidak | Admin sesi tanya-stok |
 | `NEOXR_API_KEY` | Tidak | Tools gratis |
-| `LICENSE_TIER` | Tidak | `lite` (default) / `premium` |
+| `LICENSE_KEY` | Tidak | License key Full Version (kosong = Lite). Divalidasi otomatis ke license server saat bot start; key terikat ke 1 perangkat. |
+| `LICENSE_SERVER` | Tidak | URL server lisensi (default: server resmi) |
 | `SALES_CONTACT` | Tidak | Kontak pembelian Full Version (tampil di pesan promo) |
 | `PROMO_EVERY_HOURS` | Tidak | Jeda pesan promo Lite, jam (default 6, 0 = mati) |
 
