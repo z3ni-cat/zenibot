@@ -1,7 +1,7 @@
 // help — daftar semua perintah bot beserta fungsinya. Alias: perintah
 // Perintah khusus owner hanya ditampilkan ke owner.
 // Format rapi: - perintah : fungsi
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 
 const UMUM = [
   ['menu', 'buka menu utama toko'],

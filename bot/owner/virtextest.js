@@ -2,7 +2,7 @@
 // Khusus owner. Command: virtextest (alias: virtex-test)
 // Menjalankan sampel karakter bermasalah lewat sanitizeText + ekstraksi perintah
 // yang sama seperti handler.js, lalu melaporkan hasilnya.
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 import { sanitizeText } from '../src/sanitize.js'
 
 const U = (...codes) => String.fromCharCode(...codes)

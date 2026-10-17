@@ -1,6 +1,6 @@
 // setpp — ganti foto profil bot. Kirim FOTO dengan caption "setpp". KHUSUS owner.
 import { downloadMediaMessage } from '@whiskeysockets/baileys'
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 
 export default {
   name: 'setpp',

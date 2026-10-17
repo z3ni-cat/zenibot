@@ -15,7 +15,7 @@
 // Stok tersimpan per produk di data/stock/<id>.json dan otomatis
 // berkurang setiap ada pembelian yang berhasil.
 import { loadProducts, findProduct } from '../src/products.js'
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 import {
   parseStockEntries, addStock, clearStock, saveRules,
 } from '../src/stock.js'

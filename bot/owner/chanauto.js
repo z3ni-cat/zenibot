@@ -1,5 +1,5 @@
 // chanauto — atur auto-post update GitHub ke WhatsApp Channel. KHUSUS owner.
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 import { loadChannelConfig, saveChannelConfig } from '../src/channelAutoPost.js'
 import { BOT_NAME } from '../src/brand.js'
 import { isPremium, upsellText } from '../src/license.js'

@@ -1,5 +1,5 @@
 // join — bot gabung grup via link invite. KHUSUS owner.
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 
 export default {
   name: 'join',

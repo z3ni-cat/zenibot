@@ -76,7 +76,8 @@ node index.js   # pertama kali: masukkan kode pairing 8 digit di WA
 zenibot/
 ├── bot/            # kode bot WhatsApp (Baileys)
 │   ├── src/        # logika inti (toko, payment, stok, lisensi, dsb)
-│   ├── plugins/    # perintah chat
+│   ├── plugin/     # perintah chat (semua pengguna)
+│   ├── owner/      # perintah khusus owner
 │   ├── data/       # database JSON (dibuat otomatis)
 │   └── assets/     # cover produk & thumbnail
 └── .env.example

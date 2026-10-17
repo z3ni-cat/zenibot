@@ -29,16 +29,10 @@ import {
   deleteCover, COVER_DIR,
 } from '../src/products.js'
 import { formatRupiah } from '../src/utils.js'
+export { isAdmin } from '../src/admin.js'
 import { startWizard } from '../src/produkWizard.js'
 import { isPremium, LITE_MAX_PRODUCTS, upsellText } from '../src/license.js'
 
-export function isAdmin(config, sender, senderNumber) {
-  const owners = config.owner || []
-  return owners.some((o) => {
-    const clean = String(o).replace(/[^0-9]/g, '')
-    return sender === o || senderNumber === clean
-  })
-}
 
 export default {
   name: '+produk',

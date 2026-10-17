@@ -1,5 +1,5 @@
 // Browser menu SMM + wizard order (link -> jumlah -> konfirmasi -> QRIS).
-// Dipakai oleh plugins/smm.js dan di-hook dari menu.js (kategori smm-panel).
+// Dipakai oleh plugin/smm.js dan di-hook dari menu.js (kategori smm-panel).
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'

@@ -1,4 +1,4 @@
-// Plugin loader: baca semua file .js di folder plugins/
+// Plugin loader: baca semua file .js di folder plugin/ dan owner/
 // Setiap plugin wajib: export default { name, run } dan opsional { alias, description }
 import { readdir } from 'fs/promises'
 import path from 'path'

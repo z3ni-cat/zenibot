@@ -1,6 +1,6 @@
 // Tools Gratis — eksekusi via API sendiri (https://zenicat.net/api).
 // Neoxr hanya dipakai untuk downloader (fallback rahad) & fitur berat (nobg/remini/pdf).
-// Dipakai oleh plugins/tools.js (UI) dan src/deviceMode.js (navigasi angka iPhone).
+// Dipakai oleh plugin/tools.js (UI) dan src/deviceMode.js (navigasi angka iPhone).
 import { downloadMediaMessage } from '@whiskeysockets/baileys'
 import { neoxr, downloadBuffer, uploadTemp, normMedia } from './neoxr.js'
 import { getToolSession, updateToolSession, clearToolSession } from './toolSession.js'

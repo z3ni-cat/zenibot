@@ -8,7 +8,7 @@
 //   +market off                  -> keluarkan grup ini dari pantauan (owner)
 //   +market tiap <menit>         -> atur interval cek (owner)
 import { loadConfig, saveConfig, analyze, formatSignal } from '../src/market.js'
-import { isAdmin } from './produk.js'
+import { isAdmin } from '../src/admin.js'
 import { isPremium, upsellText } from '../src/license.js'
 
 function normGroups(c) {

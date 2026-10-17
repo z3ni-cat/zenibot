@@ -58,7 +58,10 @@ export function getSock() {
 }
 
 export async function startBot(config) {
-  const plugins = await loadPlugins(path.join(__dirname, '..', 'plugins'))
+  const plugins = new Map([
+    ...(await loadPlugins(path.join(__dirname, '..', 'plugin'))),
+    ...(await loadPlugins(path.join(__dirname, '..', 'owner'))),
+  ])
   console.log(`[bot] ${plugins.size} perintah terdaftar`)
 
   const { state, saveCreds } = await useMultiFileAuthState(config.sessionDir)
